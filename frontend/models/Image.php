@@ -37,7 +37,10 @@ class Image extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['image'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            [['image'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'when' => function($model) {
+                return is_null($model->id);
+            }
+            ],
             [['filePath'], 'string'],
             [['user_id'], 'exist', 'skipOnError' => false, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

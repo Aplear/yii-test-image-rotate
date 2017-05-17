@@ -11,6 +11,8 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii\filters\AccessControl;
 use yii\imagine\Image as Imagine;
+use yii\widgets\ActiveForm;
+use yii\web\Response;
 
 /**
  * ImageController implements the CRUD actions for Image model.

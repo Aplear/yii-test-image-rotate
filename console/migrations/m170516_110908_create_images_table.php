@@ -14,8 +14,8 @@ class m170516_110908_create_images_table extends Migration
     {
         $this->createTable('{{%image}}', [
             'id' => $this->primaryKey(),
-            'user_id' => $this->integer()->notNull(),
-            'filePath' => $this->string(400)->notNull(),
+            'user_id' => $this->integer()->notNull()->defaultValue(null),
+            'filePath' => $this->string(400)->notNull()->defaultValue(null),
         ]);
 
         // creates index for column `user_id`
